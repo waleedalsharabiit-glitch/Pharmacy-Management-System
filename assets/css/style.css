@@ -1,0 +1,1186 @@
+/* تنسيق كروت الاختصارات التفاعلية */
+.card-shortcut {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #e2e8f0;
+}
+
+.card-shortcut:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.card-shortcut .icon {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.card-shortcut.yellow { border-top: 5px solid #eab308; }
+.card-shortcut.yellow2 { border-top: 5px solid #ca8a04; }
+.card-shortcut.cyan { border-top: 5px solid #06b6d4; }
+.card-shortcut.teal { border-top: 5px solid #14b8a6; }
+
+/* مؤشرات الحالات والصلحيات (Badges) */
+.badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.badge.user {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+.badge.pharmacist {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+
+/* تقسيم الشاشة ليكون النموذج والجدول متجاورين في الشاشات الكبيرة ومتراصين في الصغيرة */
+.admin-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* جعل الجدول يأخذ مساحة أكبر من الفورم */
+    gap: 30px;
+    align-items: start;
+}
+
+@media (max-width: 992px) {
+    .admin-grid {
+        grid-template-columns: 1fr; /* تحت حجم 992px يعود التصميم عموديًا */
+    }
+}
+
+/* عناوين الصناديق */
+.form-title, .table-title {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: var(--text-main);
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+/* أزرار الإجراءات داخل الجدول */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-edit, .btn-delete {
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.1s;
+    display: inline-block;
+}
+
+.btn-edit {
+    background-color: #3b82f6;
+    color: #ffffff;
+}
+.btn-edit:hover {
+    background-color: #2563eb;
+    transform: translateY(-1px);
+}
+
+.btn-delete {
+    background-color: var(--danger);
+    color: #ffffff;
+}
+.btn-delete:hover {
+    background-color: #dc2626;
+    transform: translateY(-1px);
+}
+
+/* عناصر الإدخال والتحديث المضمنة داخل الجداول */
+.select-inline {
+    padding: 6px 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background-color: #fff;
+    font-size: 13px;
+}
+
+.btn-update-inline {
+    background-color: var(--success);
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.btn-update-inline:hover {
+    background-color: #059669;
+}
+
+
+
+
+/* new pages */
+
+/* تنسيقات صفحة الملف الشخصي */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-header-card {
+    background: var(--card-bg);
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    text-align: center;
+    border: 1px solid #e2e8f0;
+}
+
+.profile-avatar-large {
+    font-size: 72px;
+    background-color: #f1f5f9;
+    width: 110px;
+    height: 110px;
+    line-height: 110px;
+    border-radius: 50%;
+    margin: 0 auto 15px auto;
+    border: 3px solid var(--primary);
+}
+
+.profile-header-card h2 {
+    margin: 10px 0 5px 0;
+    font-size: 22px;
+}
+
+/* تنسيقات حالات الطلبات (Badges) */
+.badge-status {
+    padding: 6px 12px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.badge-status.pending {
+    background-color: #fef3c7;
+    color: #d97706;
+}
+
+.badge-status.approved {
+    background-color: #d1fae5;
+    color: #059669;
+}
+
+
+
+
+/* --- إعدادات وتنسيقات لوحة التحكم المتقدمة --- */
+:root {
+    --bg-main: #0b0f19;
+    --card-bg-dark: rgba(30, 41, 59, 0.4);
+    --border-glass: rgba(255, 255, 255, 0.05);
+    --text-white: #f8fafc;
+    --text-slate: #94a3b8;
+    
+    /* الألوان الأساسية المضيئة */
+    --cyan-glow: #06b6d4;
+    --green-glow: #10b981;
+    --red-glow: #ef4444;
+    --purple-glow: #8b5cf6;
+    --amber-glow: #f59e0b;
+    --rose-glow: #f43f5e;
+    
+    --transition-fast: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-white);
+}
+
+/* حاوية الواجهة المقسمة مع القائمة الجانبية */
+.dashboard-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main-content-premium {
+    flex: 1;
+    padding: 40px;
+    background: radial-gradient(circle at top right, rgba(15, 118, 110, 0.05) 0%, transparent 40%);
+}
+
+/* هيدر الصفحة المطور */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--border-glass);
+    padding-bottom: 20px;
+}
+
+.header-title h1 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.header-title p {
+    color: var(--text-slate);
+    font-size: 14px;
+}
+
+.user-profile-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 8px 16px;
+    border-radius: 50px;
+    border: 1px solid var(--border-glass);
+}
+
+.user-avatar {
+    font-size: 18px;
+}
+
+.user-name {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* كروت الإحصائيات الفاخرة */
+.premium-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: var(--card-bg-dark);
+    border: 1px solid var(--border-glass);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: var(--transition-fast);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* تخصيص إطار مضيء خفيف لكل كرت إحصائي */
+.stat-card.border-cyan:hover { border-color: var(--cyan-glow); }
+.stat-card.border-green:hover { border-color: var(--green-glow); }
+.stat-card.border-red:hover { border-color: var(--red-glow); }
+.stat-card.border-purple:hover { border-color: var(--purple-glow); }
+
+.stat-icon-wrap {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+}
+
+/* خلفيات خفيفة للأيقونات */
+.bg-cyan-dim { background: rgba(6, 182, 212, 0.1); color: var(--cyan-glow); }
+.bg-green-dim { background: rgba(16, 182, 129, 0.1); color: var(--green-glow); }
+.bg-red-dim { background: rgba(239, 68, 68, 0.1); color: var(--red-glow); }
+.bg-purple-dim { background: rgba(139, 92, 246, 0.1); color: var(--purple-glow); }
+
+.stat-info h3 {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.stat-info span {
+    font-size: 13px;
+    color: var(--text-slate);
+}
+
+/* خطوط فاصلة للأقسام */
+.section-divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.section-divider h2 {
+    font-size: 18px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.section-divider .line {
+    flex: 1;
+    height: 1px;
+    background: var(--border-glass);
+}
+
+/* كروت الاختصارات السريعة المطورة */
+.shortcuts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.shortcut-card {
+    background: var(--card-bg-dark);
+    border: 1px solid var(--border-glass);
+    padding: 20px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: var(--text-white);
+    transition: var(--transition-fast);
+}
+
+.shortcut-icon {
+    font-size: 28px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shortcut-desc {
+    flex: 1;
+}
+
+.shortcut-desc h4 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.shortcut-desc p {
+    font-size: 12px;
+    color: var(--text-slate);
+}
+
+.arrow-indicator {
+    font-size: 14px;
+    color: var(--text-slate);
+    transition: var(--transition-fast);
+}
+
+/* تأثير التوهج اللوني والحركي لكروت الوصول السريع */
+.shortcut-card:hover {
+    transform: translateX(-5px); /* إزاحة خفيفة لليسار لخدمة اتجاه RTL */
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.shortcut-card:hover .arrow-indicator {
+    transform: translateX(-5px);
+}
+
+.shortcut-card.glow-teal:hover { border-color: var(--cyan-glow); box-shadow: 0 0 20px rgba(6, 182, 212, 0.15); }
+.shortcut-card.glow-blue:hover { border-color: var(--purple-glow); box-shadow: 0 0 20px rgba(139, 92, 246, 0.15); }
+.shortcut-card.glow-amber:hover { border-color: var(--amber-glow); box-shadow: 0 0 20px rgba(245, 158, 11, 0.15); }
+.shortcut-card.glow-rose:hover { border-color: var(--rose-glow); box-shadow: 0 0 20px rgba(244, 63, 94, 0.15); }
+
+/* توافق الشاشات للموبايل */
+@media (max-width: 768px) {
+    .dashboard-wrapper {
+        flex-direction: column;
+    }
+    .main-content-premium {
+        padding: 20px;
+    }
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+
+
+/* home_admin */
+/* --- تنسيق القائمة الجانبية الكبيرة والفاخرة --- */
+.sidebar-premium {
+    width: 290px; /* تكبير العرض ليعطي فخامة ومساحة مريحة للعين */
+    min-width: 290px;
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.95) 0%, rgba(9, 13, 22, 0.98) 100%);
+    border-left: 1px solid rgba(255, 255, 255, 0.06); /* فاصل جهة اليسار لأن الموقع يدعم اتجاه RTL */
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    backdrop-filter: blur(20px);
+    z-index: 100;
+}
+
+/* شعار النظام أعلى القائمة الجانبية */
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 30px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sidebar-logo .logo-icon {
+    font-size: 28px;
+    background: var(--primary-gradient);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(20, 184, 166, 0.3);
+}
+
+.sidebar-logo h2 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+}
+
+/* حاوية روابط القائمة الجانبية */
+.sidebar-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* مسافة عمودية ممتازة بين الأزرار لمنع تكدس الروابط */
+    flex: 1;
+}
+
+/* تنسيق الروابط المفردة الكبير والتفاعلي */
+.sidebar-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* مسافة عريضة بين الأيقونة والنص */
+    padding: 14px 18px; /* حشوة كبيرة تعطي زراً عريضاً وسهل الضغط */
+    color: #94a3b8; /* لون رمادي كلاسيكي مريح */
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid transparent;
+}
+
+/* الأيقونات التعبيرية داخل الروابط */
+.sidebar-menu li a .nav-icon {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* تأثير التمرير بالماوس فوق الروابط (Hover Effect) */
+.sidebar-menu li a:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.05);
+    transform: translateX(-5px); /* حركة انزلاق طفيفة لليمين/اليسار تزيد التفاعل */
+}
+
+.sidebar-menu li a:hover .nav-icon {
+    transform: scale(1.15); /* تضخيم الأيقونة قليلاً عند التمرير */
+}
+
+/* كود الرابط النشط حالياً (Active Page) لإبراز مكانه بالنظام */
+.sidebar-menu li.active a {
+    background: var(--primary-gradient);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(15, 118, 110, 0.25);
+    border-color: rgba(20, 184, 166, 0.2);
+}
+
+/* زر تسجيل الخروج المميز أسفل القائمة */
+.sidebar-menu li.logout-item {
+    margin-top: auto; /* دفع الزر ليكون في قاع القائمة دائماً */
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 15px;
+}
+
+.sidebar-menu li.logout-item a {
+    color: #f87171; /* لون أحمر هادئ للتحذير */
+}
+
+.sidebar-menu li.logout-item a:hover {
+    background: rgba(248, 113, 113, 0.08);
+    border-color: rgba(248, 113, 113, 0.15);
+    color: #f87171;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* --- تنسيق جدول نشاطات المستخدم الفاخر --- */
+.table-container-premium {
+    background: var(--card-bg-dark);
+    border: 1px solid var(--border-glass);
+    border-radius: 20px;
+    padding: 20px;
+    overflow-x: auto;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.table-container-premium table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: right;
+}
+
+.table-container-premium th {
+    padding: 15px;
+    font-size: 14px;
+    color: var(--text-slate);
+    border-bottom: 1.5px solid var(--border-glass);
+    font-weight: 700;
+}
+
+.table-container-premium td {
+    padding: 18px 15px;
+    font-size: 14px;
+    color: var(--text-white);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.table-container-premium tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.01);
+}
+
+/* تصنيف أنواع النشاطات */
+.activity-type {
+    font-weight: 700;
+    font-size: 13px;
+    padding: 4px 10px;
+    border-radius: 8px;
+}
+.activity-type.issue {
+    background: rgba(6, 182, 212, 0.1);
+    color: var(--cyan-glow);
+}
+.activity-type.request {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--amber-glow);
+}
+
+/* بادج الحالة العصري والمضيء */
+.badge-status-modern {
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.badge-status-modern.success {
+    background: rgba(16, 182, 129, 0.12);
+    color: var(--green-glow);
+    border: 1px solid rgba(16, 182, 129, 0.2);
+}
+
+.badge-status-modern.pending {
+    background: rgba(245, 158, 11, 0.12);
+    color: var(--amber-glow);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+/* إضافة خط غامق للأيقونات المضيئة */
+.font-bold {
+    font-weight: bold;
+}
+
+
+
+/* --- شبكة البحث والفلترة الزجاجية --- */
+.search-filter-panel {
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.filter-form {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.search-input-wrap, .filter-select-wrap {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+}
+
+.search-input-wrap input, .filter-select-wrap select {
+    width: 100%;
+    padding: 12px 15px;
+    padding-right: 40px;
+    background: rgba(9, 13, 22, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 10px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-input-wrap .search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+}
+
+.filter-select-wrap select {
+    padding-right: 15px; /* لتوافق العرض */
+}
+
+.btn-premium-search {
+    background: var(--primary-gradient);
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s;
+}
+
+.btn-premium-search:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(20, 184, 166, 0.4);
+}
+
+/* --- تصميم كروت الأدوية الإبداعي --- */
+.medicines-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.medicine-card {
+    background: rgba(15, 23, 42, 0.5);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+}
+
+.medicine-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.card-image-wrap {
+    height: 180px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.02);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-image-wrap img {
+    max-height: 80%;
+    max-width: 80%;
+    object-fit: contain;
+}
+
+.card-status {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+}
+
+.card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.medicine-cat-tag {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #14b8a6;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.medicine-name-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.medicine-meta-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 15px;
+}
+
+.meta-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+.meta-label { color: #94a3b8; }
+.meta-value { color: #f1f5f9; font-weight: 600; }
+.price-text { color: #10b981; font-size: 15px; font-weight: 800; }
+.expiry-text { color: #f87171; }
+
+.btn-card-action {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-card-action.request {
+    background: rgba(20, 184, 166, 0.15);
+    color: #14b8a6;
+    border: 1px solid rgba(20, 184, 166, 0.3);
+}
+
+.btn-card-action.request:hover {
+    background: var(--primary-gradient);
+    color: #fff;
+}
+
+.btn-card-action.suggest {
+    background: rgba(248, 113, 113, 0.1);
+    color: #f87171;
+    border: 1px solid rgba(248, 113, 113, 0.2);
+}
+
+.btn-card-action.suggest:hover {
+    background: #f87171;
+    color: #fff;
+}
+
+/* --- تصميم فورم الطلب الفخم (Form Container) --- */
+.premium-form-container {
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 35px;
+    border-radius: 24px;
+    backdrop-filter: blur(12px);
+    max-width: 750px;
+    margin: 0 auto 40px auto;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #cbd5e1;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    padding: 14px;
+    background: rgba(9, 13, 22, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: #14b8a6;
+}
+
+.form-row-double {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row-double .form-group {
+    flex: 1;
+}
+
+/* رفع الملفات الاحترافي */
+.custom-file-upload input[type="file"] {
+    display: none;
+}
+
+.upload-area-label {
+    border: 2px dashed rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    background: rgba(9, 13, 22, 0.3);
+    transition: all 0.3s ease;
+}
+
+.upload-area-label:hover {
+    border-color: #14b8a6;
+    background: rgba(20, 184, 166, 0.04);
+}
+
+.upload-icon { font-size: 30px; margin-bottom: 10px; }
+.upload-limits { font-size: 11px; color: #64748b; margin-top: 5px;}
+
+/* السعر الإجمالي */
+.price-badge-display {
+    font-size: 24px;
+    font-weight: 800;
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+    padding: 10px 20px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+/* أزرار فورم الإرسال */
+.form-button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-form-submit {
+    flex: 2;
+    background: var(--primary-gradient);
+    color: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    transition: all 0.2s ease;
+}
+
+.btn-form-submit:hover {
+    box-shadow: 0 4px 20px rgba(20, 184, 166, 0.35);
+    transform: translateY(-2px);
+}
+
+.btn-form-cancel {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    color: #94a3b8;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.2s;
+}
+
+.btn-form-cancel:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+
+
+
+
+
+
+/* --- واجهة فورم طلب توفير الدواء --- */
+.form-header-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.form-header-badge h3 {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.badge-icon {
+    font-size: 24px;
+    background: rgba(20, 184, 166, 0.15);
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.info-tip-box {
+    background: rgba(14, 116, 144, 0.15);
+    border: 1px solid rgba(14, 116, 144, 0.3);
+    padding: 15px 20px;
+    border-radius: 12px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.tip-icon { font-size: 20px; }
+.tip-text { font-size: 13px; color: #38bdf8; line-height: 1.5; margin: 0; }
+
+/* --- كروت متابعة الطلبات الإبداعية (Track Cards) --- */
+.requests-tracking-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.request-track-card {
+    background: rgba(15, 23, 42, 0.45);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.request-track-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.track-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.request-badge {
+    font-size: 12px;
+    font-weight: 700;
+    color: #14b8a6;
+    background: rgba(20, 184, 166, 0.1);
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+
+.request-time-stamp {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.track-card-body {
+    padding: 20px;
+    flex: 1;
+}
+
+.med-request-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.med-cat-tag-badge {
+    font-size: 11px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #94a3b8;
+    padding: 4px 10px;
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.track-details {
+    background: rgba(9, 13, 22, 0.4);
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #cbd5e1;
+}
+
+/* خط تتبع التقدم التفاعلي (Progress Line) */
+.progress-track-wrapper {
+    margin-top: 20px;
+    position: relative;
+}
+
+.progress-bar-line {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 50%; /* الافتراضي لقيد الانتظار والمراجعة */
+    border-radius: 10px;
+}
+
+.progress-fill.pending { background: #f59e0b; width: 50%; }
+.progress-fill.success { background: #10b981; width: 100%; }
+.progress-fill.danger { background: #ef4444; width: 100%; }
+
+.progress-points {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.point {
+    font-size: 11px;
+    color: #64748b;
+    font-weight: 600;
+    background: #090d16;
+    padding: 0 5px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.point.active {
+    color: #f59e0b;
+}
+
+.point.active-success {
+    color: #10b981;
+    font-weight: 700;
+}
+
+.point.active-danger {
+    color: #ef4444;
+    font-weight: 700;
+}
+
+/* تذييل كرت التتبع */
+.track-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.status-indicator-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+.status-indicator-badge.pending {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+}
+
+.status-indicator-badge.success {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.status-indicator-badge.danger {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+.btn-action-go-issue {
+    background: var(--primary-gradient);
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.btn-action-go-issue:hover {
+    transform: scale(1.05);
+}
+
+.full-width-card {
+    grid-column: 1 / -1;
+}
+
+
+
+
+
+
